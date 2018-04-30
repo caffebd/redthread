@@ -170,22 +170,10 @@ function showProgress() {
       var rounded = Math.round(percent);
        var showCircle = document.getElementById(circleToChange);
 
-       console.log(percent);
+       console.log(rounded);
 
-
-      switch(rounded) {
-    case 1:
-        showCircle.src="/"+circleToChange+"/fill1.png"
-        break;
-    case 2:
-        showCircle.src="/"+circleToChange+"/fill2.png"
-        break;
-    case 3:
-        showCircle.src="/"+circleToChange+"/fill3.png"
-        break;
-    default:
-        showCircle.src="/"+circleToChange+"/fill1.png"
-}
+showCircle.src="/"+circleToChange+"/Layer-"+rounded+".png"
+        
 
     };
 
@@ -232,7 +220,7 @@ ctx.fillStyle = "#28f";
 
 //(quiz.contextScore/maximumContextScore)*100
 
-showCircle(1,'contextCircle');
+showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle');
        
 drawCircle(ctx, 100, 100, 60, (quiz.contextScore/maximumContextScore)*100, '#FF0000');
 
@@ -283,7 +271,7 @@ function continueQuiz(id) {
 
     ctx.fillStyle = "#28f";
 
-    showCircle(1,'contextCircle');
+   showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle');
    
     drawCircle(ctx, 100, 100, 60, (section/sectionMax)*100, '#FF0000');
 
