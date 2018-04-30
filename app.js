@@ -273,7 +273,7 @@ function continueQuiz(id) {
 
    showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle');
    
-    drawCircle(ctx, 100, 100, 60, (section/sectionMax)*100, '#FF0000');
+  //  drawCircle(ctx, 100, 100, 60, (section/sectionMax)*100, '#FF0000');
 
 //console.log(maximumContextScore);
       };
