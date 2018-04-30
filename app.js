@@ -21,26 +21,26 @@ function populate() {
 
       switch (quiz.sectionEnd()){
         case 'context':
-        showSectionScores(quiz.contextScore, maximumContextScore);
+        showSectionScores(quiz.contextScore, maximumContextScore, 'context');
         break;
         case 'beliefs':
-        showSectionScores(quiz.beliefsScore, maximumBeliefsScore);
+        showSectionScores(quiz.beliefsScore, maximumBeliefsScore, 'beliefs');
         break;
         case 'behaviours':
-        showSectionScores(quiz.behavioursScore, maximumBehavioursScore);
+        showSectionScores(quiz.behavioursScore, maximumBehavioursScore, 'behaviours');
         break;
 
         case 'role':
-        showSectionScores(quiz.roleScore, maximumRoleScore);
+        showSectionScores(quiz.roleScore, maximumRoleScore,'role');
         break;
         case 'culture':
-        showSectionScores(quiz.cultureScore, maximumCultureScore);
+        showSectionScores(quiz.cultureScore, maximumCultureScore,'culture');
         break;
         case 'purpose':
-        showSectionScores(quiz.purposeScore, maximumPurposeScore);
+        showSectionScores(quiz.purposeScore, maximumPurposeScore,'purpose');
         break;
         case 'resources':
-        showSectionScores(quiz.resourcesScore, maximumResourcesScore);
+        showSectionScores(quiz.resourcesScore, maximumResourcesScore,'resources');
         break;
 
     }
@@ -170,7 +170,7 @@ function showProgress() {
       var rounded = Math.round(percent);
        var showCircle = document.getElementById(circleToChange);
 
-       console.log(rounded);
+       console.log("/"+circleToChange+"/Layer-"+rounded+".png");
 
 showCircle.src="/"+circleToChange+"/Layer-"+rounded+".png"
         
@@ -236,7 +236,7 @@ drawCircle(ctx, 550, 250, 60, (quiz.resourcesScore/maximumResourcesScore)*100, '
       };
 
 
-function showSectionScores(section, sectionMax) {
+function showSectionScores(section, sectionMax, mySection) {
 
 function continueQuiz(id) {
 
@@ -271,7 +271,7 @@ function continueQuiz(id) {
 
     ctx.fillStyle = "#28f";
 
-   showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle');
+   showCircle((quiz.contextScore/maximumContextScore)*100,mySection);
    
   //  drawCircle(ctx, 100, 100, 60, (section/sectionMax)*100, '#FF0000');
 
