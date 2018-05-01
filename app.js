@@ -170,9 +170,9 @@ function showProgress() {
       var rounded = Math.round(percent);
        var showCircle = document.getElementById(circleToChange);
 
-       console.log("/"+circleToChange+"/Layer-"+rounded+".png");
+       console.log("/"+circleToChange+"/Layer-"+rounded+".svg");
 
-showCircle.src="/"+circleToChange+"/Layer-"+rounded+".png"
+showCircle.src="/"+circleToChange+"/Layer-"+rounded+".svg"
         
 
     };
