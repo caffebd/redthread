@@ -37,7 +37,7 @@ function populate() {
         showSectionScores(quiz.cultureScore, maximumCultureScore,'culture');
         break;
         case 'purpose':
-        showSectionScores(quiz.purposeScore, maximumPurposeScore,'purpose');
+        showSectionScores(quiz.purposeScore, maximumPurposeScore,'direction');
         break;
         case 'resources':
         showSectionScores(quiz.resourcesScore, maximumResourcesScore,'resources');
