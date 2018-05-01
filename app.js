@@ -13,6 +13,9 @@
     questionSet='';
 
 function preparePopulate(theSet){
+    
+    //need to track last saved score var and run new score var
+    
     questionSet=theSet;
         switch (questionSet){
         case 'contextCircle':
@@ -306,6 +309,16 @@ function continueQuiz(id) {
 
 //console.log(maximumContextScore);
       };
+
+
+
+function closeModal(){
+    
+    console.log('cm');
+    
+    $("#contextSection").collapse('hide');
+    
+};
 
 // create questions
 var questions = [

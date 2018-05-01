@@ -88,6 +88,11 @@ Quiz.prototype.sectionEnd = function() {
         case 2.5:
         sectionEnd = 'context';
         this.contextDone=true;
+            $('#exampleModal').modal('show');
+/*           setTimeout(function() {
+   $("#contextSection").collapse('hide');
+}, 3000);*/
+          
         break;
         case 5.5:
         sectionEnd = 'beliefs';
