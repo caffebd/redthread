@@ -1,62 +1,211 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
 <body>
 
+    <div class="container d-none d-sm-none d-md-block">
+        <!--desktop-->
 
-    <div class="grid">
-        <div id="endSection">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <h2 class="text--center">Frontier Leadership</h2>
+            </div>
+
+            <div class="col-md-4">
+                <div class="row align-items-center">
+
+
+
+                    <div class="col-md-6"><a data-toggle="collapse" href="#context" role="button" aria-expanded="false" aria-controls="context" onclick="populate()"><img src="/context/Layer%200.svg" alt=""></a></div>
+
+
+
+
+                    <div class="col-md-6">
+                        <img src="/beliefs/Layer%200.svg" alt="">
+                        <img src="/behaviour/Layer%200.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <img src="/role/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-md-2">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <img src="/direction/Layer%200.svg" alt="">
+                    </div>
+
+                    <div class="col-md-12">
+                        <img src="/culture/Layer%200.svg" alt="">
+                    </div>
+
+                    <div class="col-md-12">
+                        <img src="/resources/Layer%200.svg" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <div class="row">
+            <div class="col">
+                <div class="collapse multi-collapse" id="context">
+                    <div class="card card-body">
 
 
+                        <div id="quiz">
 
-        
-        <img id="context" src="/context/Layer%200.svg" height="225" width="225">
-        <img id="context" src="/beliefs/Layer%200.svg" height="225" width="225">
-        <img id="context" src="/behaviour/Layer%200.svg" height="225" width="225">
-        <img id="context" src="/role/Layer%200.svg" height="225" width="225">
-        <img id="context" src="/resources/Layer%200.svg" height="225" width="225">
-        <img id="context" src="/direction/Layer%200.svg" height="225" width="225">
-        <img id="context" src="/culture/Layer%200.svg" height="225" width="225">
-        <div id="quiz">
+                            <h1>Quiz</h1>
+                            <hr style="margin-bottom: 20px">
 
-            <h1>Quiz</h1>
-            <hr style="margin-bottom: 20px">
+                            <p id="question"></p>
 
-            <p id="question"></p>
+                            <div class="buttons">
+                                <button id="btn0" class="buttonNormal"><span id="choice0"></span></button>
+                                <button id="btn1" class="buttonNormal"><span id="choice1"></span></button>
+                                <button id="btn2" class="buttonNormal"><span id="choice2"></span></button>
+                                <button id="btn3" class="buttonNormal"><span id="choice3"></span></button>
+                                <button id="btn4" class="buttonNormal"><span id="choice4"></span></button>
+                                <button id="btn5" class="buttonNormal"><span id="choice5"></span></button>
+                                <button id="btn6" class="buttonNormal"><span id="choice6"></span></button>
+                            </div>
 
-            <div class="buttons">
-                <button id="btn0" class="buttonNormal"><span id="choice0"></span></button>
-                <button id="btn1" class="buttonNormal"><span id="choice1"></span></button>
-                <button id="btn2" class="buttonNormal"><span id="choice2"></span></button>
-                <button id="btn3" class="buttonNormal"><span id="choice3"></span></button>
-                <button id="btn4" class="buttonNormal"><span id="choice4"></span></button>
-                <button id="btn5" class="buttonNormal"><span id="choice5"></span></button>
-                <button id="btn6" class="buttonNormal"><span id="choice6"></span></button>
+                            <div>
+                                <button id="submit" class="buttonNormal">SUBMIT</button>
+                            </div>
+
+                            <hr style="margin-top: 80px">
+                            <footer>
+                                <p id="progress">Question x of y</p>
+                            </footer>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
-
-            <div>
-                <button id="submit" class="buttonNormal">SUBMIT</button>
+            <div class="col">
+                <div class="collapse multi-collapse" id="beliefs">
+                    <div class="card card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                </div>
             </div>
-
-            <hr style="margin-top: 80px">
-            <footer>
-                <p id="progress">Question x of y</p>
-            </footer>
         </div>
     </div>
 
+
+
+
+
+
+
+
+    <div class="container d-none d-sm-block d-md-none">
+
+        <!--tablet-->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="center-block">Frontier Leadership</h2>
+            </div>
+
+            <div class="col-sm-4">
+                <img src="/context/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-sm-4">
+                <img src="/beliefs/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-sm-4">
+                <img src="/behaviour/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-sm-4">
+                <img src="/role/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-sm-4">
+                <img src="/direction/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-sm-4">
+                <img src="/culture/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-sm-4">
+                <img src="/resources/Layer%200.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container d-block d-sm-none">
+
+        <!--mobile-->
+
+        <div class="row">
+            <div class="col-12">
+                <h2 class="center-block">Frontier Leadership</h2>
+            </div>
+
+            <div class="col-6">
+                <img src="/context/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-6">
+                <img src="/beliefs/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-6">
+                <img src="/behaviour/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-6">
+                <img src="/role/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-6">
+                <img src="/direction/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-6">
+                <img src="/culture/Layer%200.svg" alt="">
+            </div>
+
+            <div class="col-6">
+                <img src="/resources/Layer%200.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="bootstrap.bundle.js"></script>
     <script src="quiz.js"></script>
     <script src="question.js"></script>
     <script src="app.js"></script>
     <script src="raphael.min.js"></script>
 
 </body>
+
 </html>

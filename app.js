@@ -12,6 +12,8 @@
 
 function populate() {
 
+    
+    console.log("Hello, pop");
 
     if(quiz.isEnded()) {
         showAllScores();
@@ -48,8 +50,8 @@ function populate() {
     }else{
         // show question
 
-            var hideEnd = document.getElementById("endSection");
-            hideEnd.style.display = 'none';
+           /* var hideEnd = document.getElementById("endSection");
+            hideEnd.style.display = 'none';*/
 
             var showQuiz = document.getElementById("quiz");
             showQuiz.style.display = 'inline';
