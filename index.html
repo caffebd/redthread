@@ -25,14 +25,15 @@
 
 
 
-                    <div class="col-md-6"><a data-toggle="collapse" href="#context" role="button" aria-expanded="false" aria-controls="context" onclick="populate()"><img src="/context/Layer%200.svg" alt=""></a></div>
+                    <div class="col-md-6"><a data-toggle="collapse" href="#contextSection" role="button" aria-expanded="false" aria-controls="contextSection" onclick="populate('context')"><img src="/contextCircle/Layer%200.svg" id = "contextCircle" alt=""></a></div>
 
 
 
 
                     <div class="col-md-6">
-                        <img src="/beliefs/Layer%200.svg" alt="">
-                        <img src="/behaviour/Layer%200.svg" alt="">
+                        <a data-toggle="collapse" href="#context" role="button" aria-expanded="false" aria-controls="context" onclick="populate('beliefs')"><img src="/beliefs/Layer%200.svg" alt=""></a>
+                        <a data-toggle="collapse" href="#context" role="button" aria-expanded="false" aria-controls="context" onclick="populate('behaviours')"><img src="/behaviour/Layer%200.svg" alt=""></a>                       
+                       
                     </div>
                 </div>
             </div>
@@ -60,7 +61,7 @@
 
         <div class="row">
             <div class="col">
-                <div class="collapse multi-collapse" id="context">
+                <div class="collapse multi-collapse" id="contextSection">
                     <div class="card card-body">
 
 

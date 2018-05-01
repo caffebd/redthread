@@ -10,43 +10,43 @@
      maximumSelection=1;
      selected=0;
 
-function populate() {
+function populate(questionSet) {
 
     
-    console.log("Hello, pop");
-
-    if(quiz.isEnded()) {
-        showAllScores();
-    }
-    else if (quiz.sectionEnd() !=''){
-
-
-      switch (quiz.sectionEnd()){
+    console.log("Hello "+questionSet);
+    
+        switch (questionSet){
         case 'context':
-        showSectionScores(quiz.contextScore, maximumContextScore, 'context');
+        quiz.questionIndex = 0;
         break;
         case 'beliefs':
-        showSectionScores(quiz.beliefsScore, maximumBeliefsScore, 'beliefs');
+        quiz.questionIndex =3;
         break;
         case 'behaviours':
-        showSectionScores(quiz.behavioursScore, maximumBehavioursScore, 'behaviours');
+        quiz.questionIndex =6;
         break;
 
         case 'role':
-        showSectionScores(quiz.roleScore, maximumRoleScore,'role');
+        quiz.questionIndex =9;
         break;
         case 'culture':
-        showSectionScores(quiz.cultureScore, maximumCultureScore,'culture');
+        quiz.questionIndex =12;
         break;
         case 'purpose':
-        showSectionScores(quiz.purposeScore, maximumPurposeScore,'direction');
+        quiz.questionIndex =15;
         break;
         case 'resources':
-        showSectionScores(quiz.resourcesScore, maximumResourcesScore,'resources');
+       quiz.questionIndex =18;
         break;
+                           }
 
-    }
-
+    if(quiz.isEnded()) {
+        showAllScores();
+        
+        }
+    else if (quiz.sectionEnd() !=''){
+ showAllScores();
+    
     }else{
         // show question
 
@@ -58,6 +58,8 @@ function populate() {
 
        // setup submit button
         guess("submit");
+        
+       
 
         var element = document.getElementById("question");
         element.innerHTML = quiz.getQuestionIndex().text;
@@ -172,9 +174,9 @@ function showProgress() {
       var rounded = Math.round(percent);
        var showCircle = document.getElementById(circleToChange);
 
-       console.log("/"+circleToChange+"/Layer%20"+rounded+".svg");
+       console.log("/"+circleToChange+"/Layer"+rounded+".svg");
 
-showCircle.src="/"+circleToChange+"/Layer%20"+rounded+".svg"
+showCircle.src="/"+circleToChange+"/Layer"+rounded+".svg"
         
 
     };
@@ -197,7 +199,7 @@ showCircle.src="/"+circleToChange+"/Layer%20"+rounded+".svg"
 };
 
 function showAllScores() {
-    var gameOverHTML = "<h1>Result</h1>";
+/*    var gameOverHTML = "<h1>Result</h1>";
     gameOverHTML += "<h2 id='score'> Your context: " + quiz.contextScore + "</h2>";
     gameOverHTML += "<h2 id='score'> Your beliefs: " + quiz.beliefsScore + "</h2>";
     gameOverHTML += "<h2 id='score'> Your role: " + quiz.roleScore + "</h2>";
@@ -218,13 +220,13 @@ function showAllScores() {
 var ctx = document.querySelector("canvas").getContext("2d"),
     pst = 0, dlt = 2;
 
-ctx.fillStyle = "#28f";
+ctx.fillStyle = "#28f";*/
 
 //(quiz.contextScore/maximumContextScore)*100
 
 showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle');
        
-drawCircle(ctx, 100, 100, 60, (quiz.contextScore/maximumContextScore)*100, '#FF0000');
+/*drawCircle(ctx, 100, 100, 60, (quiz.contextScore/maximumContextScore)*100, '#FF0000');
 
 drawCircle(ctx, 250, 100, 60, (quiz.beliefsScore/maximumBeliefsScore)*100, '#0CBB31');
 
@@ -232,7 +234,7 @@ drawCircle(ctx, 400, 100, 60, (quiz.behavioursScore/maximumBehavioursScore)*100,
 drawCircle(ctx, 100, 250, 60, (quiz.roleScore/maximumRoleScore)*100, '#F4D03F');
 drawCircle(ctx, 250, 250, 60, (quiz.cultureScore/maximumCultureScore)*100, '#6C3483');
 drawCircle(ctx, 400, 250, 60, (quiz.purposeScore/maximumPurposeScore)*100, '#E67E22');
-drawCircle(ctx, 550, 250, 60, (quiz.resourcesScore/maximumResourcesScore)*100, '#21618C');
+drawCircle(ctx, 550, 250, 60, (quiz.resourcesScore/maximumResourcesScore)*100, '#21618C');*/
 
 //console.log(maximumContextScore);
       };
