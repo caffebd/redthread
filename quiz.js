@@ -8,6 +8,13 @@ function Quiz(questions) {
     this.resourcesScore = 0;
     this.questions = questions;
     this.questionIndex = 0;
+    this.contextDone=false;
+    this.behavioursDone=false;
+    this.beliefsDone=false;
+    this.roleDone=false;
+    this.cultureDone=false;
+    this.resourcesDone=false;
+    this.purposeDone=false;
 
 
 
@@ -63,7 +70,14 @@ if (end){
 }
 
 Quiz.prototype.isEnded = function() {
-    return this.questionIndex === this.questions.length;
+    
+    var ended=false;
+     if(this.behavioursDone && this.beliefsDone && this.purposeDone && this.contextDone
+       && this.roleDone && this.resourcesDone && this.cultureDone){
+         ended=true;
+     }
+    
+    return ended;
 }
 
 Quiz.prototype.sectionEnd = function() {
@@ -73,24 +87,31 @@ Quiz.prototype.sectionEnd = function() {
     switch (this.questionIndex){
         case 2.5:
         sectionEnd = 'context';
+        this.contextDone=true;
         break;
         case 5.5:
         sectionEnd = 'beliefs';
+        this.beliefsDone=true;
         break;
         case 8.5:
         sectionEnd = 'behaviours';
+        this.behavioursDone=true;
         break;
         case 11.5:
         sectionEnd = 'role';
+        this.roleDone=true;
         break;
         case 14.5:
         sectionEnd = 'culture';
+        this.cultureDone=true;
         break;
         case 17.5:
         sectionEnd = 'purpose';
+        this.purposeDone=true;
         break;
         case 20.5:
         sectionEnd = 'resources';
+        this.resourcesDone=true;
         break;
 
     }

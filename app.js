@@ -10,41 +10,50 @@
      maximumSelection=1;
      selected=0;
 
-function populate(questionSet) {
+    questionSet='';
+
+function preparePopulate(theSet){
+    questionSet=theSet;
+        switch (questionSet){
+        case 'contextCircle':
+        quiz.questionIndex = 0;
+        break;
+        case 'beliefsCircle':
+        quiz.questionIndex =3;
+        break;
+        case 'behavioursCircle':
+        quiz.questionIndex =6;
+        break;
+
+        case 'roleCircle':
+        quiz.questionIndex =9;
+        break;
+        case 'cultureCircle':
+        quiz.questionIndex =12;
+        break;
+        case 'purposeCircle':
+        quiz.questionIndex =15;
+        break;
+        case 'resourcesCircle':
+       quiz.questionIndex =18;
+        break;
+                           }
+    populate();
+}
+
+function populate() {
 
     
     console.log("Hello "+questionSet);
     
-        switch (questionSet){
-        case 'context':
-        quiz.questionIndex = 0;
-        break;
-        case 'beliefs':
-        quiz.questionIndex =3;
-        break;
-        case 'behaviours':
-        quiz.questionIndex =6;
-        break;
 
-        case 'role':
-        quiz.questionIndex =9;
-        break;
-        case 'culture':
-        quiz.questionIndex =12;
-        break;
-        case 'purpose':
-        quiz.questionIndex =15;
-        break;
-        case 'resources':
-       quiz.questionIndex =18;
-        break;
-                           }
 
-    if(quiz.isEnded()) {
+/*    if(quiz.isEnded()) {
         showAllScores();
+        console.log('QUIZ COMPLETE');
         
         }
-    else if (quiz.sectionEnd() !=''){
+    else */if (quiz.sectionEnd() !=''){
  showAllScores();
     
     }else{
@@ -105,7 +114,9 @@ function guess(id) {
       }
 
        // quiz.guess(mySelections);
+
         populate();
+        
     }
 };
 
@@ -170,13 +181,15 @@ function showProgress() {
     };
 
     function showCircle (percent, circleToChange){
+        
+        console.log ()
 
       var rounded = Math.round(percent);
        var showCircle = document.getElementById(circleToChange);
 
-       console.log("/"+circleToChange+"/Layer"+rounded+".svg");
+       console.log("/"+circleToChange+"/Layer-"+rounded+".svg");
 
-showCircle.src="/"+circleToChange+"/Layer"+rounded+".svg"
+showCircle.src="/"+circleToChange+"/Layer-"+rounded+".svg"
         
 
     };
@@ -225,6 +238,18 @@ ctx.fillStyle = "#28f";*/
 //(quiz.contextScore/maximumContextScore)*100
 
 showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle');
+    showCircle((quiz.beliefsScore/maximumBeliefsScore)*100,'beliefsCircle');
+showCircle((quiz.behavioursScore/maximumBehavioursScore)*100,'behavioursCircle');
+showCircle((quiz.roleScore/maximumRoleScore)*100,'roleCircle');
+showCircle((quiz.cultureScore/maximumCultureScore)*100,'cultureCircle');
+showCircle((quiz.purposeScore/maximumPurposeScore)*100,'purposeCircle');
+showCircle((quiz.resourcesScore/maximumResourcesScore)*100,'resourcesCircle');
+    
+              if(quiz.isEnded()) {
+       
+        console.log('QUIZ COMPLETE');
+        
+        }
        
 /*drawCircle(ctx, 100, 100, 60, (quiz.contextScore/maximumContextScore)*100, '#FF0000');
 
