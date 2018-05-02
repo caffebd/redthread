@@ -25,10 +25,7 @@ function preparePopulate(theSet){
             quiz.areasComplete--;
             quiz.contextScore=0;
             showAllScores();
-        };
-    $("#contextSection").collapse('toggle');
-    $("#contextSectionT").collapse('toggle');
-    $("#contextSectionM").collapse('toggle');
+        }        
         break;
         case 'beliefsCircle':
         quiz.questionIndex =3;
@@ -233,12 +230,12 @@ function showProgress() {
         div.appendChild(canvas)
     };
 
-    function showCircle (percent, circleToChange, append){
+    function showCircle (percent, circleToChange){
         
         console.log ()
 
       var rounded = Math.round(percent);
-       var showCircle = document.getElementById(circleToChange+append);
+       var showCircle = document.getElementById(circleToChange);
 
        console.log("/"+circleToChange+"/Layer-"+rounded+".svg");
 
@@ -290,9 +287,7 @@ ctx.fillStyle = "#28f";*/
 
 //(quiz.contextScore/maximumContextScore)*100
 
-showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle','');
-    showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle','Mob');
-    showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle','MobSml');
+showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle');
     showCircle((quiz.beliefsScore/maximumBeliefsScore)*100,'beliefsCircle');
 showCircle((quiz.behavioursScore/maximumBehavioursScore)*100,'behavioursCircle');
 showCircle((quiz.roleScore/maximumRoleScore)*100,'roleCircle');
@@ -369,14 +364,6 @@ function closeModal(){
     console.log('cm');
     
     $("#contextSection").collapse('hide');
-    
-};
-
-function openContextQuestions(){
-  
-    $("#contextSection").collapse('toggle');
-    $("#contextSectionT").collapse('toggle');
-    
     
 };
 
