@@ -8,6 +8,7 @@ function Quiz(questions) {
     this.resourcesScore = 0;
     this.questions = questions;
     this.questionIndex = 0;
+    this.areasComplete=0;
     this.contextDone=false;
     this.behavioursDone=false;
     this.beliefsDone=false;
@@ -88,35 +89,73 @@ Quiz.prototype.sectionEnd = function() {
         case 2.5:
         sectionEnd = 'context';
         this.contextDone=true;
-            $('#exampleModal').modal('show');
-/*           setTimeout(function() {
-   $("#contextSection").collapse('hide');
-}, 3000);*/
-          
+        this.areasComplete++;  
+        if (this.areasComplete==7){
+            $('#completeModal').modal('show'); 
+        }  else{
+            $('#exampleModal').modal('show'); 
+        }  
+         
         break;
         case 5.5:
         sectionEnd = 'beliefs';
         this.beliefsDone=true;
+        this.areasComplete++; 
+        if (this.areasComplete==7){
+            $('#completeModal').modal('show'); 
+        }  else{
+            $('#exampleModal').modal('show'); 
+        }
         break;
         case 8.5:
         sectionEnd = 'behaviours';
         this.behavioursDone=true;
+        this.areasComplete++; 
+        if (this.areasComplete==7){
+            $('#completeModal').modal('show'); 
+        }  else{
+            $('#exampleModal').modal('show'); 
+        }
         break;
         case 11.5:
         sectionEnd = 'role';
         this.roleDone=true;
+        this.areasComplete++; 
+        if (this.areasComplete==7){
+            $('#completeModal').modal('show'); 
+        }  else{
+            $('#exampleModal').modal('show'); 
+        }
         break;
         case 14.5:
         sectionEnd = 'culture';
         this.cultureDone=true;
+        this.areasComplete++; 
+        if (this.areasComplete==7){
+            $('#completeModal').modal('show'); 
+        }  else{
+            $('#exampleModal').modal('show'); 
+        }
         break;
         case 17.5:
         sectionEnd = 'purpose';
         this.purposeDone=true;
+        this.areasComplete++; 
+        if (this.areasComplete==7){
+            $('#completeModal').modal('show'); 
+        }  else{
+            $('#exampleModal').modal('show'); 
+        }
         break;
         case 20.5:
         sectionEnd = 'resources';
         this.resourcesDone=true;
+        this.areasComplete++; 
+        if (this.areasComplete==7){
+            $('#completeModal').modal('show'); 
+        }  else{
+            $('#exampleModal').modal('show'); 
+        }
         break;
 
     }

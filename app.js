@@ -20,27 +20,74 @@ function preparePopulate(theSet){
         switch (questionSet){
         case 'contextCircle':
         quiz.questionIndex = 0;
+        if (quiz.contextDone){
+            quiz.contextDone=false;
+            quiz.areasComplete--;
+            quiz.contextScore=0;
+            showAllScores();
+        }        
         break;
         case 'beliefsCircle':
         quiz.questionIndex =3;
+ 
+        if (quiz.beliefsDone){
+            quiz.beliefsDone=false;
+            quiz.areasComplete--;
+            quiz.beliefsScore=0;
+            showAllScores();
+        }
         break;
         case 'behavioursCircle':
         quiz.questionIndex =6;
+  
+        if (quiz.behavioursDone){
+            quiz.behavioursDone=false;
+            quiz.areasComplete--;
+            quiz.behavioursScore=0;
+            showAllScores();
+        }
         break;
-
         case 'roleCircle':
         quiz.questionIndex =9;
+
+        if (quiz.roleDone){
+            quiz.roleDone=false;
+            quiz.areasComplete--;
+            quiz.roleScore=0;
+            showAllScores();
+        }
         break;
         case 'cultureCircle':
         quiz.questionIndex =12;
+
+        if (quiz.cultureDone){
+            quiz.cultureDone=false;
+            quiz.areasComplete--;
+            quiz.cultureScore=0;
+            showAllScores();
+        }
         break;
         case 'purposeCircle':
         quiz.questionIndex =15;
+ 
+        if (quiz.purposeDone){
+            quiz.purposeDone=false;
+            quiz.areasComplete--;
+            quiz.purposeScore=0;
+            showAllScores();
+        }
         break;
         case 'resourcesCircle':
        quiz.questionIndex =18;
+
+        if (quiz.resourcesDone){
+            quiz.resourcesDone=false;
+            quiz.areasComplete--;
+            quiz.resourcesScore=0;
+            showAllScores();
+        }
         break;
-                           }
+    }
     populate();
 }
 
