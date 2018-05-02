@@ -1,5 +1,5 @@
 body {
-    background-color: #eeeeee;
+    background-color: #f5f5f5;
 }
 
 .grid {
@@ -40,35 +40,44 @@ body {
 }
 
 .buttonNormal {
-   background-color: #778897;
+   background-color: #fff;
+    width: 100%;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+    border:none;
 }
 
 .buttonSelect {
-    background-color: #ff0000;
+    color: #fff !important;
+    background-color: #ef5350;
+    border:none;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+
    
 }
 
 
 #btn0, #btn1, #btn2, #btn3, #btn4, #btn5, #btn6 {
    
-    width: 250px;
+    width: 100%;
     font-size: 17px;
-    color: #fff;
-    border: 1px solid #1D3C6A;
-    border-radius: 50px;
-    margin: 10px 40px 10px 0px;
-    padding: 10px 10px;
+    color: #59595b;
+    /*  border: 1px solid #1D3C6A;*/
+    border-radius: 10px;
+    /*margin: 10px 40px 10px 0px;*/
+    margin-bottom: 30px;
+    padding: 15px 10px;
 }
 
  #submit{
-    width: 250px;
+    background-color: #4caf50;
+    width: 100%;
     font-size: 20px;
     color: #fff;
-    border: 1px solid #1D3C6A;
-    border-radius: 50px;
-    margin: 10px 40px 10px 0px;
-    padding: 10px 10px;
-    float: right;
+    /*border: 1px solid #1D3C6A;*/
+    border-radius: 10px;
+    /*margin: 10px 40px 10px 0px;*/
+    padding: 20px 10px;
+    /*float: right;*/
  }
 
   #continue{
