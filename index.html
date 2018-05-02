@@ -11,8 +11,6 @@
 </head>
 
 <body>
-
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -28,13 +26,13 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Close</button>
-                   <!-- <button type="button" class="btn btn-primary">Save changes</button>-->
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button>-->
                 </div>
             </div>
         </div>
     </div>
 
-        <div class="modal fade" id="completeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="completeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -48,19 +46,125 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Close</button>
-                   <!-- <button type="button" class="btn btn-primary">Save changes</button>-->
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button>-->
                 </div>
             </div>
         </div>
     </div>
+    
+    
+    
+    
+    <!--desktop-->
 
-    <div class="container d-none d-sm-none d-md-block" style="background-color: #eeeeee">
-        <!--desktop-->
+    <div class="container" style="background-color: #eeeeee">
+      
+
+        <div class="row align-items-center" id="quiz">
+            <div class="col-md-12 collapse multi-collapse" id="contextSection">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 style="text-align: center">Frontier Leadership</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center">Quiz</h1>
+                        <hr style="margin-bottom: 20px">
+                    </div>
+                </div>
+
+                <div class="row buttons">
+                    <div class="col">
+                        <h5 id="question" style="text-align: center;"></h5>
+                    </div>
+                </div>
+
+                <div class="row buttons">
+                    <div class="col-md-6"><button id="btn0" class="buttonNormal btn btn-lg btn-block"><span id="choice0"></span></button></div>
+                    <div class="col-md-6"><button id="btn1" class="buttonNormal btn btn-lg btn-block"><span id="choice1"></span></button></div>
+                    <div class="col-md-6"><button id="btn2" class="buttonNormal btn btn-lg btn-block"><span id="choice2"></span></button></div>
+                    <div class="col-md-6"><button id="btn3" class="buttonNormal btn btn-lg btn-block"><span id="choice3"></span></button></div>
+                    <div class="col-md-6"><button id="btn4" class="buttonNormal btn btn-lg btn-block"><span id="choice4"></span></button></div>
+                    <div class="col-md-6"><button id="btn5" class="buttonNormal btn btn-lg btn-block"><span id="choice5"></span></button></div>
+                    <div class="col-md-6"><button id="btn6" class="buttonNormal btn btn-lg btn-block"><span id="choice6"></span></button></div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-4 p-4">
+                        <button id="submit" class="buttonNormal">Submit</button>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <hr style="margin-top: 80px">
+                        <footer>
+                            <p id="progress">Question x of y</p>
+                        </footer>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
 
         <div class="row align-items-center pb-5 pt-5" style="background-color: #fff;">
             <div class="col-md-4">
                 <h2 class="text-center">Frontier Leadership</h2>
             </div>
+
+            <div class="row align-items-center" id="quiz">
+                <div class="collapse multi-collapse" id="contextSection">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-center">Quiz</h1>
+                            <hr style="margin-bottom: 20px">
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col">
+                            <h5 id="question" style="text-align: center;"></h5>
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col-md-6"><button id="btn0" class="buttonNormal btn btn-lg btn-block"><span id="choice0"></span></button></div>
+                        <div class="col-md-6"><button id="btn1" class="buttonNormal btn btn-lg btn-block"><span id="choice1"></span></button></div>
+                        <div class="col-md-6"><button id="btn2" class="buttonNormal btn btn-lg btn-block"><span id="choice2"></span></button></div>
+                        <div class="col-md-6"><button id="btn3" class="buttonNormal btn btn-lg btn-block"><span id="choice3"></span></button></div>
+                        <div class="col-md-6"><button id="btn4" class="buttonNormal btn btn-lg btn-block"><span id="choice4"></span></button></div>
+                        <div class="col-md-6"><button id="btn5" class="buttonNormal btn btn-lg btn-block"><span id="choice5"></span></button></div>
+                        <div class="col-md-6"><button id="btn6" class="buttonNormal btn btn-lg btn-block"><span id="choice6"></span></button></div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 p-4">
+                            <button id="submit" class="buttonNormal">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <hr style="margin-top: 80px">
+                            <footer>
+                                <p id="progress">Question x of y</p>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
 
             <div class="col-md-4">
                 <div class="row align-items-center">
@@ -108,7 +212,7 @@
 
         <div class="row align-items-center" id="quiz">
             <div class="collapse multi-collapse" id="contextSection">
-            
+
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="text-center">Quiz</h1>
@@ -117,7 +221,9 @@
                 </div>
 
                 <div class="row buttons">
-                   <div class="col"><h5 id="question" style="text-align: center;"></h5></div>
+                    <div class="col">
+                        <h5 id="question" style="text-align: center;"></h5>
+                    </div>
                 </div>
 
                 <div class="row buttons">
@@ -128,9 +234,9 @@
                     <div class="col-md-6"><button id="btn4" class="buttonNormal btn btn-lg btn-block"><span id="choice4"></span></button></div>
                     <div class="col-md-6"><button id="btn5" class="buttonNormal btn btn-lg btn-block"><span id="choice5"></span></button></div>
                     <div class="col-md-6"><button id="btn6" class="buttonNormal btn btn-lg btn-block"><span id="choice6"></span></button></div>
-                </div> 
+                </div>
 
-                 <div class="row justify-content-center">
+                <div class="row justify-content-center">
                     <div class="col-md-4 p-4">
                         <button id="submit" class="buttonNormal">Submit</button>
                     </div>
@@ -150,36 +256,36 @@
         </div>
     </div>
 
+    <!--// desktop-->
 
 
 
 
-
-
+    <!--tablet-->
+    <!--
 
     <div class="container d-none d-sm-block d-md-none">
-
-        <!--tablet-->
-
         <div class="row">
             <div class="col-sm-12">
-                <h2 class="center-block">Frontier Leadership</h2>
+                <h3 style="text-align: center;">Frontier Leadership</h3>
             </div>
+            
+        
 
             <div class="col-sm-4">
                 <a data-toggle="collapse" href="#contextSectionNO" role="button" aria-expanded="false" aria-controls="contextSectionNO" onclick="preparePopulate('contextCircle')"><img src="/contextCircle/Layer-0.svg" id = "contextCircleMob" alt=""></a>
             </div>
 
             <div class="col-sm-4">
-                <img src="/beliefsCircle/Layer-0.svg" alt="">
+                <a data-toggle="collapse" href="#contextSectionNO" role="button" aria-expanded="false" aria-controls="contextSectionNO" onclick="preparePopulate('contextCircle')"><img src="/beliefsCircle/Layer-0.svg" id = "beliefsCircleMob" alt=""></a>
             </div>
 
             <div class="col-sm-4">
-                <img src="/behavioursCircle/Layer-0.svg" alt="">
+                <a data-toggle="collapse" href="#contextSectionNO" role="button" aria-expanded="false" aria-controls="contextSectionNO" onclick="preparePopulate('contextCircle')"><img src="/behavioursCircle/Layer-0.svg" id = "behavioursCircleMob" alt=""></a>
             </div>
-            
-            <!-- new code -->
-            
+
+             new code 
+
             <div class="col-sm-12">
                 <div class="row align-items-center" id="quiz">
                     <div class="col-sm-12 collapse multi-collapse" id="contextSectionT">
@@ -226,8 +332,8 @@
 
                 </div>
             </div>
-            
-            
+
+
 
             <div class="col-sm-4">
                 <img src="/roleCircle/Layer-0.svg" alt="">
@@ -241,19 +347,120 @@
                 <img src="/cultureCircle/Layer-0.svg" alt="">
             </div>
 
+
+
+            <div class="row align-items-center" id="quiz">
+                <div class="col-sm-12 collapse multi-collapse" id="contextSectionT">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1 class="text-center">Quiz</h1>
+                            <hr style="margin-bottom: 20px">
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col">
+                            <h5 id="question" style="text-align: center;"></h5>
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col-sm-6"><button id="btn0" class="buttonNormal btn btn-lg btn-block"><span id="choice0"></span></button></div>
+                        <div class="col-sm-6"><button id="btn1" class="buttonNormal btn btn-lg btn-block"><span id="choice1"></span></button></div>
+                        <div class="col-sm-6"><button id="btn2" class="buttonNormal btn btn-lg btn-block"><span id="choice2"></span></button></div>
+                        <div class="col-sm-6"><button id="btn3" class="buttonNormal btn btn-lg btn-block"><span id="choice3"></span></button></div>
+                        <div class="col-sm-6"><button id="btn4" class="buttonNormal btn btn-lg btn-block"><span id="choice4"></span></button></div>
+                        <div class="col-sm-6"><button id="btn5" class="buttonNormal btn btn-lg btn-block"><span id="choice5"></span></button></div>
+                        <div class="col-sm-6"><button id="btn6" class="buttonNormal btn btn-lg btn-block"><span id="choice6"></span></button></div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 p-4">
+                            <button id="submit" class="buttonNormal">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <hr style="margin-top: 80px">
+                            <footer>
+                                <p id="progress">Question x of y</p>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
             <div class="col-sm-4">
                 <img src="/resourcesCircle/Layer-0.svg" alt="">
             </div>
+
+
+
+            <div class="row align-items-center" id="quiz">
+                <div class="col-sm-12 collapse multi-collapse" id="contextSectionT">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1 class="text-center">Quiz</h1>
+                            <hr style="margin-bottom: 20px">
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col">
+                            <h5 id="question" style="text-align: center;"></h5>
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col-sm-6"><button id="btn0" class="buttonNormal btn btn-lg btn-block"><span id="choice0"></span></button></div>
+                        <div class="col-sm-6"><button id="btn1" class="buttonNormal btn btn-lg btn-block"><span id="choice1"></span></button></div>
+                        <div class="col-sm-6"><button id="btn2" class="buttonNormal btn btn-lg btn-block"><span id="choice2"></span></button></div>
+                        <div class="col-sm-6"><button id="btn3" class="buttonNormal btn btn-lg btn-block"><span id="choice3"></span></button></div>
+                        <div class="col-sm-6"><button id="btn4" class="buttonNormal btn btn-lg btn-block"><span id="choice4"></span></button></div>
+                        <div class="col-sm-6"><button id="btn5" class="buttonNormal btn btn-lg btn-block"><span id="choice5"></span></button></div>
+                        <div class="col-sm-6"><button id="btn6" class="buttonNormal btn btn-lg btn-block"><span id="choice6"></span></button></div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 p-4">
+                            <button id="submit" class="buttonNormal">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <hr style="margin-top: 80px">
+                            <footer>
+                                <p id="progress">Question x of y</p>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
     </div>
+-->
 
 
 
-
+    <!--mobile-->
+    <!--
 
     <div class="container d-block d-sm-none">
 
-        <!--mobile-->
+        
 
         <div class="row">
             <div class="col-12">
@@ -268,6 +475,54 @@
                 <img src="/beliefsCircle/Layer-0.svg" alt="">
             </div>
 
+
+            <div class="row align-items-center" id="quiz">
+                <div class="col-sm-12 collapse multi-collapse" id="contextSectionT">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1 class="text-center">Quiz</h1>
+                            <hr style="margin-bottom: 20px">
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col">
+                            <h5 id="question" style="text-align: center;"></h5>
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col-sm-6"><button id="btn0" class="buttonNormal btn btn-lg btn-block"><span id="choice0"></span></button></div>
+                        <div class="col-sm-6"><button id="btn1" class="buttonNormal btn btn-lg btn-block"><span id="choice1"></span></button></div>
+                        <div class="col-sm-6"><button id="btn2" class="buttonNormal btn btn-lg btn-block"><span id="choice2"></span></button></div>
+                        <div class="col-sm-6"><button id="btn3" class="buttonNormal btn btn-lg btn-block"><span id="choice3"></span></button></div>
+                        <div class="col-sm-6"><button id="btn4" class="buttonNormal btn btn-lg btn-block"><span id="choice4"></span></button></div>
+                        <div class="col-sm-6"><button id="btn5" class="buttonNormal btn btn-lg btn-block"><span id="choice5"></span></button></div>
+                        <div class="col-sm-6"><button id="btn6" class="buttonNormal btn btn-lg btn-block"><span id="choice6"></span></button></div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 p-4">
+                            <button id="submit" class="buttonNormal">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <hr style="margin-top: 80px">
+                            <footer>
+                                <p id="progress">Question x of y</p>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
             <div class="col-6">
                 <img src="/behavioursCircle/Layer-0.svg" alt="">
             </div>
@@ -275,6 +530,54 @@
             <div class="col-6">
                 <img src="/roleCircle/Layer-0.svg" alt="">
             </div>
+
+
+            <div class="row align-items-center" id="quiz">
+                <div class="col-sm-12 collapse multi-collapse" id="contextSectionT">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1 class="text-center">Quiz</h1>
+                            <hr style="margin-bottom: 20px">
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col">
+                            <h5 id="question" style="text-align: center;"></h5>
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col-sm-6"><button id="btn0" class="buttonNormal btn btn-lg btn-block"><span id="choice0"></span></button></div>
+                        <div class="col-sm-6"><button id="btn1" class="buttonNormal btn btn-lg btn-block"><span id="choice1"></span></button></div>
+                        <div class="col-sm-6"><button id="btn2" class="buttonNormal btn btn-lg btn-block"><span id="choice2"></span></button></div>
+                        <div class="col-sm-6"><button id="btn3" class="buttonNormal btn btn-lg btn-block"><span id="choice3"></span></button></div>
+                        <div class="col-sm-6"><button id="btn4" class="buttonNormal btn btn-lg btn-block"><span id="choice4"></span></button></div>
+                        <div class="col-sm-6"><button id="btn5" class="buttonNormal btn btn-lg btn-block"><span id="choice5"></span></button></div>
+                        <div class="col-sm-6"><button id="btn6" class="buttonNormal btn btn-lg btn-block"><span id="choice6"></span></button></div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 p-4">
+                            <button id="submit" class="buttonNormal">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <hr style="margin-top: 80px">
+                            <footer>
+                                <p id="progress">Question x of y</p>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
 
             <div class="col-6">
                 <img src="/purposeCircle/Layer-0.svg" alt="">
@@ -284,11 +587,111 @@
                 <img src="/cultureCircle/Layer-0.svg" alt="">
             </div>
 
+
+
+            <div class="row align-items-center" id="quiz">
+                <div class="col-sm-12 collapse multi-collapse" id="contextSectionT">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1 class="text-center">Quiz</h1>
+                            <hr style="margin-bottom: 20px">
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col">
+                            <h5 id="question" style="text-align: center;"></h5>
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col-sm-6"><button id="btn0" class="buttonNormal btn btn-lg btn-block"><span id="choice0"></span></button></div>
+                        <div class="col-sm-6"><button id="btn1" class="buttonNormal btn btn-lg btn-block"><span id="choice1"></span></button></div>
+                        <div class="col-sm-6"><button id="btn2" class="buttonNormal btn btn-lg btn-block"><span id="choice2"></span></button></div>
+                        <div class="col-sm-6"><button id="btn3" class="buttonNormal btn btn-lg btn-block"><span id="choice3"></span></button></div>
+                        <div class="col-sm-6"><button id="btn4" class="buttonNormal btn btn-lg btn-block"><span id="choice4"></span></button></div>
+                        <div class="col-sm-6"><button id="btn5" class="buttonNormal btn btn-lg btn-block"><span id="choice5"></span></button></div>
+                        <div class="col-sm-6"><button id="btn6" class="buttonNormal btn btn-lg btn-block"><span id="choice6"></span></button></div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 p-4">
+                            <button id="submit" class="buttonNormal">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <hr style="margin-top: 80px">
+                            <footer>
+                                <p id="progress">Question x of y</p>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
             <div class="col-6">
                 <img src="/resourcesCircle/Layer-0.svg" alt="">
             </div>
+
+
+            <div class="row align-items-center" id="quiz">
+                <div class="col-sm-12 collapse multi-collapse" id="contextSectionT">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1 class="text-center">Quiz</h1>
+                            <hr style="margin-bottom: 20px">
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col">
+                            <h5 id="question" style="text-align: center;"></h5>
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col-sm-6"><button id="btn0" class="buttonNormal btn btn-lg btn-block"><span id="choice0"></span></button></div>
+                        <div class="col-sm-6"><button id="btn1" class="buttonNormal btn btn-lg btn-block"><span id="choice1"></span></button></div>
+                        <div class="col-sm-6"><button id="btn2" class="buttonNormal btn btn-lg btn-block"><span id="choice2"></span></button></div>
+                        <div class="col-sm-6"><button id="btn3" class="buttonNormal btn btn-lg btn-block"><span id="choice3"></span></button></div>
+                        <div class="col-sm-6"><button id="btn4" class="buttonNormal btn btn-lg btn-block"><span id="choice4"></span></button></div>
+                        <div class="col-sm-6"><button id="btn5" class="buttonNormal btn btn-lg btn-block"><span id="choice5"></span></button></div>
+                        <div class="col-sm-6"><button id="btn6" class="buttonNormal btn btn-lg btn-block"><span id="choice6"></span></button></div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 p-4">
+                            <button id="submit" class="buttonNormal">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <hr style="margin-top: 80px">
+                            <footer>
+                                <p id="progress">Question x of y</p>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
         </div>
     </div>
+-->
 
 
 
@@ -303,7 +706,7 @@
     <script src="raphael.min.js"></script>
 
 </body>
-    
-    
+
+
 
 </html>
