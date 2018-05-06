@@ -6,15 +6,23 @@
      maximumPurposeScore=0;
      maximumResourcesScore=0;
 
+    currentQuestionNumber=0;
+
      mySelections=[];
      maximumSelection=1;
      selected=0;
 
+    screenType='full';
+
     questionSet='';
 
-function preparePopulate(theSet){
+function preparePopulate(theSet, screen){
     
     //need to track last saved score var and run new score var
+    
+   
+  screenType=screen;
+currentQuestionNumber=1;
     
     questionSet=theSet;
         switch (questionSet){
@@ -144,8 +152,12 @@ function populate() {
             //guess("btn" + i, choices[i]);
             buttonSelect("btn"+i, choices[i]);
         }
-
-
+        
+        console.log(screenType);
+if (screenType != 'full'){
+    console.log('in me '+screenType);
+window.scrollTo(0, 0);
+}
         showProgress();
     }
 };
@@ -213,9 +225,10 @@ function buttonSelect(id, guess){
 
 
 function showProgress() {
-    var currentQuestionNumber = quiz.questionIndex + 1;
+   // var currentQuestionNumber = quiz.questionIndex + 1;
     var element = document.getElementById("progress");
-    element.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.questions.length;
+    element.innerHTML = "Question " + currentQuestionNumber + " of 3";
+    currentQuestionNumber++;
 };
 
     function loadCanvas(id, myHeight) {
@@ -230,12 +243,12 @@ function showProgress() {
         div.appendChild(canvas)
     };
 
-    function showCircle (percent, circleToChange){
+    function showCircle (percent, circleToChange, append){
         
         console.log ()
 
       var rounded = Math.round(percent);
-       var showCircle = document.getElementById(circleToChange);
+       var showCircle = document.getElementById(circleToChange+append);
 
        console.log("/"+circleToChange+"/Layer-"+rounded+".svg");
 
@@ -287,13 +300,42 @@ ctx.fillStyle = "#28f";*/
 
 //(quiz.contextScore/maximumContextScore)*100
 
-showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle');
-    showCircle((quiz.beliefsScore/maximumBeliefsScore)*100,'beliefsCircle');
-showCircle((quiz.behavioursScore/maximumBehavioursScore)*100,'behavioursCircle');
-showCircle((quiz.roleScore/maximumRoleScore)*100,'roleCircle');
-showCircle((quiz.cultureScore/maximumCultureScore)*100,'cultureCircle');
-showCircle((quiz.purposeScore/maximumPurposeScore)*100,'purposeCircle');
-showCircle((quiz.resourcesScore/maximumResourcesScore)*100,'resourcesCircle');
+showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle','');
+    showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle','Med');
+    showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle','Tab');
+    showCircle((quiz.contextScore/maximumContextScore)*100,'contextCircle','Mob');    
+    
+    
+    showCircle((quiz.beliefsScore/maximumBeliefsScore)*100,'beliefsCircle','');
+        showCircle((quiz.beliefsScore/maximumBeliefsScore)*100,'beliefsCircle','Med');
+     showCircle((quiz.beliefsScore/maximumBeliefsScore)*100,'beliefsCircle','Tab');
+     showCircle((quiz.beliefsScore/maximumBeliefsScore)*100,'beliefsCircle','Mob');
+    
+    showCircle((quiz.behavioursScore/maximumBehavioursScore)*100,'behavioursCircle','');
+     showCircle((quiz.behavioursScore/maximumBehavioursScore)*100,'behavioursCircle','Med');
+    showCircle((quiz.behavioursScore/maximumBehavioursScore)*100,'behavioursCircle','Tab');
+    showCircle((quiz.behavioursScore/maximumBehavioursScore)*100,'behavioursCircle','Mob');
+    
+    
+showCircle((quiz.roleScore/maximumRoleScore)*100,'roleCircle','');
+    showCircle((quiz.roleScore/maximumRoleScore)*100,'roleCircle','Med');
+    showCircle((quiz.roleScore/maximumRoleScore)*100,'roleCircle','Tab');
+    showCircle((quiz.roleScore/maximumRoleScore)*100,'roleCircle','Mob');
+    
+showCircle((quiz.cultureScore/maximumCultureScore)*100,'cultureCircle','');
+    showCircle((quiz.cultureScore/maximumCultureScore)*100,'cultureCircle','Med');
+    showCircle((quiz.cultureScore/maximumCultureScore)*100,'cultureCircle','Tab');
+    showCircle((quiz.cultureScore/maximumCultureScore)*100,'cultureCircle','Mob');
+    
+showCircle((quiz.purposeScore/maximumPurposeScore)*100,'purposeCircle','');
+    showCircle((quiz.purposeScore/maximumPurposeScore)*100,'purposeCircle','Med');
+    showCircle((quiz.purposeScore/maximumPurposeScore)*100,'purposeCircle','Tab');
+    showCircle((quiz.purposeScore/maximumPurposeScore)*100,'purposeCircle','Mob');
+    
+showCircle((quiz.resourcesScore/maximumResourcesScore)*100,'resourcesCircle','');
+    showCircle((quiz.resourcesScore/maximumResourcesScore)*100,'resourcesCircle','Med');
+    showCircle((quiz.resourcesScore/maximumResourcesScore)*100,'resourcesCircle','Tab');
+    showCircle((quiz.resourcesScore/maximumResourcesScore)*100,'resourcesCircle','Mob');
     
               if(quiz.isEnded()) {
        
@@ -398,7 +440,7 @@ var questions = [
     new Question("In shaping the culture of the organisation do you do any of the following? (select all that apply)", ["Commission cultural surveys", "Conduct staff surveys to understand the culture", "Develop an organisational development strategy to change your culture", "Talk about the culture you want and would like to see","Praise the culture you have"], [10,5,40,25,20], 100,"culture",5),
     new Question("Do you have organisational values?", ["Yes we regularly discuss what they mean for us an organisation", "Yes, we always use them to make decisions", "Yes, we seek feedback on how well leaders live them","Yes, but they’re not used","Yes but no one really knows what they are"], [90,60,40,0,0],90, "culture",1),
     //**** PROBLEM BELOW *****
-    new Question("***What element of your culture is the strongest? (select all that apply)", ["Your alignment behind your mission", "The consistency with which you do things", "The engagement of the whole organisation in what you are doing", "Your adaptability in the face of market challenges","All of the above"], [50,50,50,50,100], 300,"culture",5),
+    new Question("***What element of your culture is the strongest? (select all that apply)", ["Your alignment behind your mission", "The consistency with which you do things", "The engagement of the whole organisation in what you are doing", "Your adaptability in the face of market challenges","All of the above"], [50,50,50,50,100], 100,"culture",1),
 
     //purpose
 
