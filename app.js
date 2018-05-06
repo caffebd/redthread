@@ -24,10 +24,14 @@ function preparePopulate(theSet, screen){
   screenType=screen;
 currentQuestionNumber=1;
     
+     
+
+    var selectedArea = '';
     questionSet=theSet;
         switch (questionSet){
         case 'contextCircle':
         quiz.questionIndex = 0;
+        selectedArea = "Understanding your context";
         if (quiz.contextDone){
             quiz.contextDone=false;
             quiz.areasComplete--;
@@ -37,7 +41,7 @@ currentQuestionNumber=1;
         break;
         case 'beliefsCircle':
         quiz.questionIndex =3;
- 
+        selectedArea = "Understanding your Beliefs";
         if (quiz.beliefsDone){
             quiz.beliefsDone=false;
             quiz.areasComplete--;
@@ -47,7 +51,7 @@ currentQuestionNumber=1;
         break;
         case 'behavioursCircle':
         quiz.questionIndex =6;
-  
+        selectedArea =  "Understanding your behaviours";
         if (quiz.behavioursDone){
             quiz.behavioursDone=false;
             quiz.areasComplete--;
@@ -57,7 +61,7 @@ currentQuestionNumber=1;
         break;
         case 'roleCircle':
         quiz.questionIndex =9;
-
+        selectedArea =  "Choosing your role?";
         if (quiz.roleDone){
             quiz.roleDone=false;
             quiz.areasComplete--;
@@ -67,7 +71,7 @@ currentQuestionNumber=1;
         break;
         case 'cultureCircle':
         quiz.questionIndex =12;
-
+        selectedArea =  "Shaping culture";
         if (quiz.cultureDone){
             quiz.cultureDone=false;
             quiz.areasComplete--;
@@ -77,7 +81,7 @@ currentQuestionNumber=1;
         break;
         case 'purposeCircle':
         quiz.questionIndex =15;
- 
+        selectedArea =  "Enabling Purpose and Direction";
         if (quiz.purposeDone){
             quiz.purposeDone=false;
             quiz.areasComplete--;
@@ -87,7 +91,7 @@ currentQuestionNumber=1;
         break;
         case 'resourcesCircle':
        quiz.questionIndex =18;
-
+        selectedArea =  "Allocating Resources";
         if (quiz.resourcesDone){
             quiz.resourcesDone=false;
             quiz.areasComplete--;
@@ -96,6 +100,10 @@ currentQuestionNumber=1;
         }
         break;
     }
+    
+    quizAreaLabel = document.getElementById("quizArea");
+    quizAreaLabel.innerHTML = selectedArea;
+    
     populate();
 }
 
@@ -176,6 +184,8 @@ function guess(id) {
       }
 
        // quiz.guess(mySelections);
+        
+
 
         populate();
         
