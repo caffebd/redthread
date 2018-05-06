@@ -137,6 +137,7 @@
                      quiz.areasComplete--;
                      quiz.purposeScore = 0;
                      showAllScores();
+
                  }
                  break;
              case 'resourcesCircle':
@@ -299,13 +300,16 @@
 
      function showCircle(percent, circleToChange, append) {
 
+         console.log('show circle '+circleToChange+append);
 
          var rounded = Math.round(percent);
-         var showCircle = document.getElementById(circleToChange + append);
+         var showCircleId = document.getElementById(circleToChange + append);
 
         // console.log("/" + circleToChange + "/Layer-" + rounded + ".svg");
+         
+         
 
-         showCircle.src = circleToChange + "/Layer-" + rounded + ".svg";
+         showCircleId.src = circleToChange + "/Layer-" + rounded + ".svg";
 
 
      };
@@ -313,11 +317,11 @@
      function resetCircle(circleToChange, append) {
 
 
-         var showCircle = document.getElementById(circleToChange + append);
+         var restCircleId = document.getElementById(circleToChange + append);
 
-         console.log(circleToChange + "/Layer.svg");
+         //console.log(circleToChange + "/Layer.svg");
 
-         showCircle.src = circleToChange + "/Layer.svg";
+         restCircleId.src = circleToChange + "/Layer.svg";
 
 
      };
@@ -327,43 +331,102 @@
      function showAllScores() {
 
 
+            if (!quiz.contextDone) {
+             quiz.contextScore = 0;
+             resetCircle('contextCircle', '');
+             resetCircle('contextCircle', 'Med');
+             resetCircle('contextCircle', 'Tab');
+             resetCircle('contextCircle', 'Mob');
+         }else{
          showCircle((quiz.contextScore / maximumContextScore) * 100, 'contextCircle', '');
          showCircle((quiz.contextScore / maximumContextScore) * 100, 'contextCircle', 'Med');
          showCircle((quiz.contextScore / maximumContextScore) * 100, 'contextCircle', 'Tab');
          showCircle((quiz.contextScore / maximumContextScore) * 100, 'contextCircle', 'Mob');
-
+         }
+         
+            if (!quiz.beliefsDone) {
+             quiz.beliefsScore = 0;
+             resetCircle('beliefsCircle', '');
+             resetCircle('beliefsCircle', 'Med');
+             resetCircle('beliefsCircle', 'Tab');
+             resetCircle('beliefsCircle', 'Mob');
+         }else{
 
          showCircle((quiz.beliefsScore / maximumBeliefsScore) * 100, 'beliefsCircle', '');
          showCircle((quiz.beliefsScore / maximumBeliefsScore) * 100, 'beliefsCircle', 'Med');
          showCircle((quiz.beliefsScore / maximumBeliefsScore) * 100, 'beliefsCircle', 'Tab');
          showCircle((quiz.beliefsScore / maximumBeliefsScore) * 100, 'beliefsCircle', 'Mob');
-
+         }
+             
+            if (!quiz.behavioursDone) {
+             quiz.behavioursScore = 0;
+             resetCircle('behavioursCircle', '');
+             resetCircle('behavioursCircle', 'Med');
+             resetCircle('behavioursCircle', 'Tab');
+             resetCircle('behavioursCircle', 'Mob');
+         } else{   
+         
          showCircle((quiz.behavioursScore / maximumBehavioursScore) * 100, 'behavioursCircle', '');
          showCircle((quiz.behavioursScore / maximumBehavioursScore) * 100, 'behavioursCircle', 'Med');
          showCircle((quiz.behavioursScore / maximumBehavioursScore) * 100, 'behavioursCircle', 'Tab');
          showCircle((quiz.behavioursScore / maximumBehavioursScore) * 100, 'behavioursCircle', 'Mob');
+             
+         }
 
+            if (!quiz.roleDone) {
+             quiz.roleScore = 0;            
+             resetCircle('roleCircle', '');
+             resetCircle('roleCircle', 'Med');
+             resetCircle('roleCircle', 'Tab');
+             resetCircle('roleCircle', 'Mob');
+         }else{
 
          showCircle((quiz.roleScore / maximumRoleScore) * 100, 'roleCircle', '');
          showCircle((quiz.roleScore / maximumRoleScore) * 100, 'roleCircle', 'Med');
          showCircle((quiz.roleScore / maximumRoleScore) * 100, 'roleCircle', 'Tab');
          showCircle((quiz.roleScore / maximumRoleScore) * 100, 'roleCircle', 'Mob');
+             
+         }
 
+         if (!quiz.cultureDone) {
+             quiz.cultureScore = 0;
+             resetCircle('cultureCircle', '');
+             resetCircle('cultureCircle', 'Med');
+             resetCircle('cultureCircle', 'Tab');
+             resetCircle('cultureCircle', 'Mob');
+         }else{
          showCircle((quiz.cultureScore / maximumCultureScore) * 100, 'cultureCircle', '');
          showCircle((quiz.cultureScore / maximumCultureScore) * 100, 'cultureCircle', 'Med');
          showCircle((quiz.cultureScore / maximumCultureScore) * 100, 'cultureCircle', 'Tab');
          showCircle((quiz.cultureScore / maximumCultureScore) * 100, 'cultureCircle', 'Mob');
-
+         }
+         
+         
+        if (!quiz.purposeDone) {
+             quiz.purposeScore = 0;
+             resetCircle('purposeCircle', '');
+             resetCircle('purposeCircle', 'Med');
+             resetCircle('purposeCircle', 'Tab');
+             resetCircle('purposeCircle', 'Mob');
+         }else{
          showCircle((quiz.purposeScore / maximumPurposeScore) * 100, 'purposeCircle', '');
          showCircle((quiz.purposeScore / maximumPurposeScore) * 100, 'purposeCircle', 'Med');
          showCircle((quiz.purposeScore / maximumPurposeScore) * 100, 'purposeCircle', 'Tab');
          showCircle((quiz.purposeScore / maximumPurposeScore) * 100, 'purposeCircle', 'Mob');
-
+             
+         }
+         if (!quiz.resourcesDone) {
+             quiz.resourcesScore = 0;
+             resetCircle('resourcesCircle', '');
+             resetCircle('resourcesCircle', 'Med');
+             resetCircle('resourcesCircle', 'Tab');
+             resetCircle('resourcesCircle', 'Mob');
+         }else{
          showCircle((quiz.resourcesScore / maximumResourcesScore) * 100, 'resourcesCircle', '');
          showCircle((quiz.resourcesScore / maximumResourcesScore) * 100, 'resourcesCircle', 'Med');
          showCircle((quiz.resourcesScore / maximumResourcesScore) * 100, 'resourcesCircle', 'Tab');
          showCircle((quiz.resourcesScore / maximumResourcesScore) * 100, 'resourcesCircle', 'Mob');
-
+         }
 
      };
 
